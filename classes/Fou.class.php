@@ -1,7 +1,7 @@
 <?php 
 
     // classes/PieceEchecs.class.php
-    class Cavalier extends PieceEchecs {
+    class Fou extends PieceEchecs {
         // Constante 
         // Propriétés
         // Constructeur
@@ -13,12 +13,8 @@
             $distX = abs($posY - $this->getaxeY());
             $distY = abs($posX - $this->getAxeX());
 
-            // V1 - Somme 3 et dist != 0
-            // if (($distX + $distY === 3) && $distX != 0 && $distY != 0) return true;
-            // else return false;
-
-            // V2 - Pythagore
-            if (($distY*$distY + $distX*$distX === 5) && $distX != 0 && $distY != 0) return true;
+            
+            if (($distY === $distX) && $distX != 0 && $distY != 0) return true;
             else return false;
         }
     }

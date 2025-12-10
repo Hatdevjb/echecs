@@ -52,16 +52,19 @@
     try {
 
         $c1 = new Cavalier(PieceEchecs::NOIRE,2,5);
-        echo $c1. RC;
+    
 
-        var_dump($c1->peutAllerA(1,3)) ; echo "(1,3) TRUE" . RC;
-        
-        // var_dump($c1->peutAllerA(6,4)) ; echo "(6,4) TRUE" . RC;
-        // var_dump($c1->peutAllerA(8,8)) ; echo "(8,8) FALSE" . RC;
-        // var_dump($c1->peutAllerA(4,0)) ; echo "(4,0) FALSE" . RC;
+    
 
-        // $c2 = new Cavalier("9","2", PieceEchecs::NOIRE) . RC ;
+        $f1 = new Fou(PieceEchecs::BLANCHE,2,5);
+        // echo $f1 . RC;
 
+        $tPiecesEchecs = array($c1, $f1);
+
+        foreach($tPiecesEchecs as $piece) {
+            echo $piece . RC;
+            var_dump($piece->peutAllerA(3,1)) ; echo "(3,1) TRUE" . RC;
+        }
 
 
     } catch (PieceEchecsException $e) {   
