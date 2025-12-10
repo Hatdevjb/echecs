@@ -51,14 +51,21 @@
 
     try {
 
-        $c1 = new Cavalier("5","2",PieceEchecs::BLANCHE) . RC ;
+        $c1 = new Cavalier(PieceEchecs::NOIRE,2,5);
+        echo $c1. RC;
 
-        $c2 = new Cavalier("9","2", PieceEchecs::BLANCHE) . RC ;
-
+        var_dump($c1->peutAllerA(1,3)) ; echo "(1,3) TRUE" . RC;
         
+        // var_dump($c1->peutAllerA(6,4)) ; echo "(6,4) TRUE" . RC;
+        // var_dump($c1->peutAllerA(8,8)) ; echo "(8,8) FALSE" . RC;
+        // var_dump($c1->peutAllerA(4,0)) ; echo "(4,0) FALSE" . RC;
 
-    } catch (Exception $e) {   
-        echo "ERREUR : ". $e->getMessage() . RC ;
+        // $c2 = new Cavalier("9","2", PieceEchecs::NOIRE) . RC ;
+
+
+
+    } catch (PieceEchecsException $e) {   
+        echo "ERREUR : ". $e->getMessage();
     } catch (Exception $e) {
-        echo "ERR_GENERALE : ". $e->getMessage() . RC ;
+        echo "ERR_GENERALE : ". $e->getMessage();
     }

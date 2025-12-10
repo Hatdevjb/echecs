@@ -5,8 +5,8 @@
 // classes/PieceEchecs.class.php
    abstract class PieceEchecs {
         // Constante 
-            public const BLANCHE = 1;
-            public const NOIRE = 2;
+        public const BLANCHE = 1;
+        public const NOIRE = 2;
 
         // Propriétés
         
@@ -112,10 +112,10 @@
 
         public function __tostring(): string {
             return get_class($this). " ".($this->couleur === self::BLANCHE ?"blanche": "noire")
-                ." en($this ->axeX, $this->axeY)";
+                ." en($this->axeY, $this->axeX)";
         }
 
-        public abstract function peutAllerA(int $posX, int $posY): bool;
+        public abstract function peutAllerA(int $posY, int $posX): bool;
 
     }
 ?>

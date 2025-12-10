@@ -6,19 +6,19 @@
         // Propriétés
         // Constructeur
         
-        public function peutAllerA(int $posX, int $posY): bool {
+        public function peutAllerA(int $posY, int $posX): bool {
             // Test nouvelles positions dans l'échiquier
-            if ($posX < 1 || $posX > 8 || $posY < 1 || $posY > 8) return false;
+            if ($posY < 1 || $posY > 8 || $posX < 1 || $posX > 8) return false;
 
-            $distX = abs($posX - $this->getaxeX());
-            $distY = abs($posY - $this->getAxeY());
+            $distX = abs($posY - $this->getaxeY());
+            $distY = abs($posX - $this->getAxeX());
 
             // V1 - Somme 3 et dist != 0
             // if (($distX + $distY === 3) && $distX != 0 && $distY != 0) return true;
             // else return false;
 
             // V2 - Pythagore
-            if ($distX*$distX + $distY*$distY === 5) return true;
+            if ($distY*$distY + $distX*$distX === 5) return true;
             else return false;
         }
     }
