@@ -3,7 +3,7 @@
     require_once("classes/PieceEchecsException.class.php");
 
 // classes/PieceEchecs.class.php
-    class PieceEchecs {
+   abstract class PieceEchecs {
         // Constante 
             public const BLANCHE = 1;
             public const NOIRE = 2;
@@ -46,10 +46,9 @@
          */
         public function setAxeY(int $axeY): self
         {
-            if ($axeY < 1) $this->axeY = 1;
-            elseif ($axeY > 8) $this->axeY = 8;
-            else $this->axeY = $axeY;
+            if ($axeY < 1 || $axeY > 8) throw new PieceEchecsException("PB coordonnée Y incorrecte");
 
+            
             return $this;
         }
 
@@ -61,10 +60,8 @@
          */
         public function setAxeX(int $axeX): self
         {
-            if ($axeX < 1) $this->axeX = 1;
-            elseif ($axeX > 8) $this->axeX = 8;
-            else $this->axeX = $axeX;
-            
+            if ($axeX < 1 || $axeX > 8) throw new PieceEchecsException("PB coordonnée X incorrecte");
+        
             return $this;
         }
 
@@ -117,6 +114,8 @@
             return get_class($this). " ".($this->couleur === self::BLANCHE ?"blanche": "noire")
                 ." en($this ->axeX, $this->axeY)";
         }
+
+        public abstract function peutAllerA(int $posX, int $posY): bool;
 
     }
 ?>
