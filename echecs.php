@@ -51,20 +51,21 @@
 
     try {
 
-        $c1 = new Cavalier(PieceEchecs::NOIRE,2,5);
+        $c1 = new Cavalier(PieceEchecs::NOIRE,5,3);
     
 
     
 
-        $f1 = new Fou(PieceEchecs::BLANCHE,2,5);
-        // echo $f1 . RC;
+        $f1 = new Fou(PieceEchecs::BLANCHE,1,7);
+        echo $f1 . RC;
+        var_dump($f1->peutAllerA(8,8)) ; echo "(8,8) FALSE" . RC;
 
-        $tPiecesEchecs = array($c1, $f1);
+        // $tPiecesEchecs = array($c1, $f1);
 
-        foreach($tPiecesEchecs as $piece) {
-            echo $piece . RC;
-            var_dump($piece->peutAllerA(3,1)) ; echo "(3,1) TRUE" . RC;
-        }
+        // foreach($tPiecesEchecs as $piece) {
+        //     echo $piece . RC;
+        //     var_dump($piece->peutAllerA(3,4)) ; echo "(3,1) TRUE" . RC;
+        // }
 
 
     } catch (PieceEchecsException $e) {   
