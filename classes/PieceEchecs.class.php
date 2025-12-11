@@ -11,7 +11,7 @@ abstract class PieceEchecs {
     // Propriétés
     
     private $axeY;
-    private $axeX;
+    protected $axeX; // protected pour utilisation dans enfant (sinon imposible)
     private $couleur;
 
 
@@ -113,12 +113,28 @@ abstract class PieceEchecs {
 
     // Autres méthodes
 
+    /**
+     * Retourne à chaque eco le nom de la pièces, sa couleur et sa position 
+     */
     public function __tostring(): string {
         return get_class($this). " ".($this->couleur === self::BLANCHE ?"blanche": "noire")
             ." en ($this->axeY, $this->axeX)";
     }
 
+    
+    /**
+     * Retourne TRRUE si les coordonés sont dans l'échequier et sinon FALSE
+     */
+    protected function estDansLEchiquier(int $posX, int $posY): bool {
+        if ($posX < 1 || $posX > 8 || $posY < 1 || $posY > 8) return false;
+        return true;
+    }
+
+
    public abstract function peutAllerA(int $posY, int $posX): bool;
 
+   
+
 }
+
 ?>
