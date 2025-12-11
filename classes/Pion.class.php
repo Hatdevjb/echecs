@@ -3,9 +3,9 @@
         // Pas de nouvelles données membres ou propriété
         // Pas besoin de constructeur
 
-        public function peutAllerA(int $posX, int $posY): bool {
+        public function peutAllerA(int $posY, int $posX): bool {
             // Test nouvelles positions dans l'échiquier
-            if (!$this->estDansLEchiquier($posX,$posY)) return false;
+            if (!$this->estDansLEchiquier($posY,$posX)) return false;
 
             // Test si changement de colonne
             if ($posX != $this->axeX) return false;

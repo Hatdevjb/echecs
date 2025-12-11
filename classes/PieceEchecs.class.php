@@ -125,8 +125,8 @@ abstract class PieceEchecs {
     /**
      * Retourne TRRUE si les coordonés sont dans l'échequier et sinon FALSE
      */
-    protected function estDansLEchiquier(int $posX, int $posY): bool {
-        if ($posX < 1 || $posX > 8 || $posY < 1 || $posY > 8) return false;
+    protected function estDansLEchiquier(int $posY, int $posX): bool {
+        if ($posY < 1 || $posY > 8 || $posX < 1 || $posX > 8) return false;
         return true;
     }
 
